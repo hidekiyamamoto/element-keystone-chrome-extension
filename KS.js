@@ -13,6 +13,7 @@ window.KS={current:false,vdragging:false,
 		it3.ins(x,'div',['class','KSvertex','name','4','draggable','true','onmousedown','KS.vdrag(event)','style','left:'+vdata[6]+'px;top:'+vdata[7]+'px;position:absolute;width:20px;height:20px;z-index:5000;background-color:transparent;border:3px solid #000;opacity:0.7;cursor:move;']);
 		var x=document.querySelector('.currentKST');x.style.position='absolute';x.style.top='0px';x.style.left='0px';x.style.width=vdata[2]+'px';x.style.height=vdata[5]+'px';x.style.marginTop='0px';x.style.marginLeft='0px';KS.vdragging=false;
 		x=x.parentElement;while(x){x.style.contain='initial';x.style.overflow='initial';x=x.parentElement}
+		x=document.querySelector('#masthead');if(x){x.parentElement.removeChild(x)}
 	},
 	endKS:function(){var ee=document.querySelectorAll('.KSvertex');for(var z=0;z<ee.length;z++){ee[z].parentNode.removeChild(ee[z]);}KS.vdragging=false;},
 	vdrag:function(event){var s=event.srcElement;var p=s.parentNode;var i=p.querySelector('.currentKST');KS.vdragging={e:s,pp:p,oTop:parseInt(s.style.top.replace('px','')),oLeft:parseInt(s.style.left.replace('px','')),sTop:event.screenY,sLeft:event.screenX,
