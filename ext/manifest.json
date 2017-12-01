@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "element keystone",
+  "description": "This extension allows the user to change the keystone (perspective) of an element on a page",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "ext.png",
+    "default_popup": "ext.html"
+  },
+  "permissions": ["activeTab"]
+}
