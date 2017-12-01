@@ -40,7 +40,7 @@ window.impjs=function(u){
 	var s=document.createElement('script');s.setAttribute('src',u);s.setAttribute('type','text/javascript');
 	document.getElementsByTagName('head')[0].appendChild(s);
 };
-if (typeof jQuery == 'undefined') {impjs('https://code.jquery.com/jquery-1.11.1.min.js');}
-impjs('https://cdn.rawgit.com/metaschema/it3/26fdaf47/it3.js');
-impjs('https://cdn.rawgit.com/hidekiyamamoto/element-keystone-chrome-extension/591aa17a/distort.min.js');
+if (typeof jQuery=='undefined') {impjs('https://code.jquery.com/jquery-1.11.1.min.js');}
+if (typeof it3=='undefined') {impjs('https://cdn.rawgit.com/metaschema/it3/26fdaf47/it3.js');}
+if (typeof Distort=='undefined') {impjs('https://cdn.rawgit.com/hidekiyamamoto/element-keystone-chrome-extension/591aa17a/distort.min.js');}
 KS.chooser();
