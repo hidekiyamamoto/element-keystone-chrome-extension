@@ -31,7 +31,7 @@ window.KS={current:false,vdragging:false,
 		$image.css({'transform':distort.toString()});},
 	chooser:function(){document.body.querySelectorAll('*').forEach(function(e){e.addEventListener('click',KS._choose);console.log('1');});},
 	_choose:function(event){event.preventDefault();KS.quitchooser();console.log(event);KS.startKS(event.srcElement);},
-	quitchooser:function(){document.body.querySelectorAll('*').forEach(function(e){e.removeEventListener('click',KS._choose);});
+	quitchooser:function(){document.body.querySelectorAll('*').forEach(function(e){e.removeEventListener('click',KS._choose);});}
 };
 window.impjs=function(u){
 	var s=document.createElement('script');s.setAttribute('src',u);s.setAttribute('type','text/javascript');
