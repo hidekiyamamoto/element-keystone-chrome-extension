@@ -1,9 +1,10 @@
 window.KS={current:false,vdragging:false,
-	startKS:function(elm){var p=elm.parentNode;var s='position:absolute;';elm.className=(elm.className||'')+' currentKST';
+	startKS:function(elm){var p=elm.parentNode;var s='';elm.className=(elm.className||'')+' currentKST';
 		KS.vdragging=[-26,-26,elm.offsetWidth,-26,elm.offsetWidth,elm.offsetHeight,-26,elm.offsetHeight];
 		s=s+'top:'+elm.offsetTop+'px;';s=s+'left:'+elm.offsetLeft+'px;';
 		s=s+'width:'+elm.offsetWidth+'px;';s=s+'height:'+elm.offsetHeight+'px;';
-		var x=it3.ins(p,'div',['class','currentKSP','style',s],false,elm);
+		var x=it3.ins(p,'div',['class','currentKSP','style',s+'position:absolute;'],false,elm);
+		it3.ins(p,'div',['class','KSdummy','style',s+'position:relative;'],false,elm);
 		elm=p.removeChild(elm);x.appendChild(elm);setTimeout(KS._startKS,50);},
 	_startKS:function(){var x=document.querySelector('.currentKSP');var vdata=KS.vdragging;
 		it3.ins(x,'div',['class','KSvertex','name','1','draggable','true','onmousedown','KS.vdrag(event)','style','left:'+vdata[0]+'px;top:'+vdata[1]+'px;position:absolute;width:20px;height:20px;z-index:5;background-color:transparent;border:3px solid #000;opacity:0.7;cursor:move;']);
