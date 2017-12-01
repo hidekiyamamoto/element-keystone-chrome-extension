@@ -28,7 +28,10 @@ window.KS={current:false,vdragging:false,
 		distort.topRight.x+=vvv[2];distort.topRight.y+=vvv[3];
 		distort.bottomRight.x+=vvv[4];distort.bottomRight.y+=vvv[5];
 		distort.bottomLeft.x+=vvv[6];distort.bottomLeft.y+=vvv[7];
-		$image.css({'transform':distort.toString()});}
+		$image.css({'transform':distort.toString()});},
+	chooser:function(){document.body.querySelectorAll('*').forEach(function(e){e.addEventListener('click',KS._choose);console.log('1');});},
+	_choose:function(event){event.preventDefault();KS.quitchooser();console.log(event);KS.startKS(event.srcElement);},
+	quitchooser:function(){document.body.querySelectorAll('*').forEach(function(e){e.removeEventListener('click',KS._choose);});
 };
 window.impjs=function(u){
 	var s=document.createElement('script');s.setAttribute('src',u);s.setAttribute('type','text/javascript');
